@@ -1,0 +1,37 @@
+name:           HMM
+version:        0.1.0.0
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+ exposed-modules:
+    HiddenMarkov
+ hs-source-dirs: src
+ build-depends:
+     hmatrix
+   , base
+   , vector
+   , bytestring
+   , text
+   , containers
+ default-extensions:
+     OverloadedStrings
+     ScopedTypeVariables
+
+executable runHMM
+  main-is: Main.hs
+  hs-source-dirs: app
+  ghc-options:
+    -threaded -rtsopts -with-rtsopts=-N -Wall -Wmissing-local-signatures
+  build-depends:
+      base >=4.7 && <5
+    , HMM
+    , hmatrix
+    , vector
+    , bytestring
+    , text
+    , containers
+  default-extensions:
+    OverloadedStrings
+    ScopedTypeVariables
+  default-language: Haskell2010
